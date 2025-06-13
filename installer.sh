@@ -29,20 +29,6 @@ failed(){
 set -eE
 trap failed ERR INT
 
-if ! which trufflehog > /dev/null; then
-    echo "Installing dependencies"
-    if [ "$os" = "Linux" ]; then
-        sudo apt-get install -y trufflehog
-    elif [ "$os" = "Darwin" ]; then
-        HOMEBREW_NO_ENV_HINTS=true HOMEBREW_NO_INSTALL_CLEANUP=true HOMEBREW_NO_AUTO_UPDATE=true brew install -q trufflehog
-    elif [ "$os" = "Windows_NT" ]; then
-        choco install trufflehog
-    else
-        echo "Unsupported OS: $os"
-        exit 1
-    fi
-fi
-
 if [ "$os" = "Linux" ]; then
     os="OS_LINUX"
 elif [ "$os" = "Darwin" ]; then
