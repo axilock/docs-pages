@@ -459,6 +459,121 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Self Host
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Self Host
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../self-host/backend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Backend
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../self-host/frontend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Frontend
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../self-host/cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CLI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -577,17 +692,17 @@ Further, if a global <code>core.hooksPath</code> is set, then local hooks at <co
 If local <code>core.hooksPath</code> is set then global <code>core.hooksPath</code> is ignored.</p>
 </div>
 <p>Following flow chart covers the installation process:</p>
-<p><img alt="installation" src="./assets/axi-installation.drawio.svg" /></p>
+<p><img alt="installation" src="../assets/axi-installation.drawio.svg" /></p>
 <h2 id="catchall-hooks">Catchall hooks</h2>
 <p>The above installation ensures all git hooks are captured by axi inside the <code>$AXI_HOME/hooks</code> directory. In order for existing repository level hooks to run, the <code>hooksPath</code> must be set back to local repo directory. This can be done in local <code>.git/config</code>.</p>
 <p>Catchall hooks catch any and all hooks and then installs axi pre-push hook locally into the repository.
 The intended behavior is similar to <a href="https://git-scm.com/docs/git-init/2.2.3#_template_directory">git's template directory</a> with the added benefit of working in existing repositories as well.</p>
-<p><img alt="catchall" src="./assets/axi-catchall-hooks.drawio.svg" /></p>
+<p><img alt="catchall" src="../assets/axi-catchall-hooks.drawio.svg" /></p>
 <h2 id="pre-push-hook">Pre Push Hook</h2>
 <p>The locally installed <code>pre-push</code> hook created by catchall hooks calls axi binary thus delegating the pre push task to it.</p>
 <p>The pre push routine inside <code>axi</code> runs <a href="https://github.com/trufflesecurity/">trufflehog</a> to identify secrets in the codebase and blocks the push if any secrets are present in any of the commits being pushed. It does not scan already pushed commits since they were not introduced by this user and thus not her responsibility.</p>
 <p>It is also the responsibility of this routine to manage custom secret regexes for the organization.</p>
-<p><img alt="pre-push" src="./assets/axi-sekrit_binary.drawio.svg" /></p>
+<p><img alt="pre-push" src="../assets/axi-sekrit_binary.drawio.svg" /></p>
 <h2 id="uninstallation">Uninstallation</h2>
 <p>The <code>axi uninstall</code> command removes the <code>$AXI_HOME</code> directory effectively uninstalling axi from the system. It also unsets the <code>core.hooksPath</code> in the global git config.
 Whenever a <code>pre-push</code> is triggered after uninstallation,
