@@ -9,23 +9,23 @@
       
       
       
+        <link rel="prev" href="../how-it-works/">
       
-        <link rel="next" href="secret-prevention/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Axilock Docs</title>
+        <title>Telemetry - Axilock Docs</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,7 +44,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-axilock-documentation" class="md-skip">
+        <a href="#backend-telemetry-collection" class="md-skip">
           Skip to content
         </a>
       
@@ -86,7 +86,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Axilock Docs" class="md-header__button md-logo" aria-label="Axilock Docs" data-md-component="logo">
+    <a href="../.." title="Axilock Docs" class="md-header__button md-logo" aria-label="Axilock Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Telemetry
             
           </span>
         </div>
@@ -210,7 +210,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Axilock Docs" class="md-nav__button md-logo" aria-label="Axilock Docs" data-md-component="logo">
+    <a href="../.." title="Axilock Docs" class="md-nav__button md-logo" aria-label="Axilock Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>
@@ -223,6 +223,136 @@
     
       
       
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Secret Prevention
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Secret Prevention
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../how-it-works/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    How it works
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
   
   
     
@@ -242,7 +372,7 @@
   
   
   <span class="md-ellipsis">
-    Home
+    Telemetry
     
   </span>
   
@@ -250,12 +380,12 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="." class="md-nav__link md-nav__link--active">
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    Home
+    Telemetry
     
   </span>
   
@@ -278,18 +408,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#axilock-secret-prevention" class="md-nav__link">
+  <a href="#metadata" class="md-nav__link">
     <span class="md-ellipsis">
-      Axilock Secret Prevention
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#axilock-redactor" class="md-nav__link">
-    <span class="md-ellipsis">
-      Axilock Redactor
+      Metadata
     </span>
   </a>
   
@@ -299,134 +420,6 @@
   
 </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="secret-prevention/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Getting Started
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Secret Prevention
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            Secret Prevention
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="secret-prevention/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Getting Started
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="secret-prevention/how-it-works/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    How it works
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="secret-prevention/telemetry/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Telemetry
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -466,18 +459,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#axilock-secret-prevention" class="md-nav__link">
+  <a href="#metadata" class="md-nav__link">
     <span class="md-ellipsis">
-      Axilock Secret Prevention
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#axilock-redactor" class="md-nav__link">
-    <span class="md-ellipsis">
-      Axilock Redactor
+      Metadata
     </span>
   </a>
   
@@ -499,23 +483,43 @@
 
 
 
-<h1 id="welcome-to-axilock-documentation">Welcome to Axilock Documentation</h1>
-<p>Axilock is a state of the art security solution designed to secure your tech
-stack from day one. It works as a companion that that keeps your codebase
-secure at every step of the way.</p>
-<h2 id="axilock-secret-prevention"><a href="secret-prevention.md">Axilock Secret Prevention</a></h2>
-<p>Prevents secrets from being committed to your codebase. Axilock takes a
-proactive approach to secret <em>prevention</em> and saves you time and effort, rather
-than a reactive approach to secret <em>detection</em> -- where harm is already done
-and a process needs to be triggered for secret rotation. You will always
-stay compliant by never pushing a secret in the first place and have a single
-place to monitor your metrics data of what kinds of secrets are commonly
-committed and how many times.</p>
-<h2 id="axilock-redactor">Axilock Redactor</h2>
-<p>Redacts secrets from your codebase. If you have already committed a secret to
-your codebase, Axilock Redactor will help you remove it. It will also help you
-remove the secret from your git history and from any other files in your
-codebase.</p>
+<h1 id="backend-telemetry-collection">Backend Telemetry Collection</h1>
+<p>The Axilock backend collects certain metadata from the user's system in order to power the insights frontend (device coverage, secret detection frequency etc)</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>No secret or code ever leaves the user system.</p>
+</div>
+<p>In case you do not wish to send any telemetry, you can set up <a href="">your own axi backend</a> for the insights frontend.</p>
+<p>Following data is collected:</p>
+<h2 id="metadata">Metadata</h2>
+<div class="highlight"><pre><span></span><code><span class="nx">Metadata</span><span class="p">{</span>
+<span class="w">        </span><span class="nx">OS</span><span class="p">:</span><span class="w">         </span><span class="nx">runtime</span><span class="p">.</span><span class="nx">GOOS</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">Arch</span><span class="p">:</span><span class="w">       </span><span class="nx">runtime</span><span class="p">.</span><span class="nx">GOARCH</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">Hostname</span><span class="p">:</span><span class="w">   </span><span class="nx">hostname</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">Username</span><span class="p">:</span><span class="w">   </span><span class="nx">username</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">GoVersion</span><span class="p">:</span><span class="w">  </span><span class="nx">runtime</span><span class="p">.</span><span class="nx">Version</span><span class="p">(),</span>
+<span class="w">        </span><span class="nx">CliVersion</span><span class="p">:</span><span class="w"> </span><span class="nx">cli_version</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">NumCPU</span><span class="p">:</span><span class="w">     </span><span class="nx">runtime</span><span class="p">.</span><span class="nx">NumCPU</span><span class="p">(),</span>
+<span class="w">        </span><span class="nx">PID</span><span class="p">:</span><span class="w">        </span><span class="nx">os</span><span class="p">.</span><span class="nx">Getpid</span><span class="p">(),</span>
+<span class="w">        </span><span class="nx">Timestamp</span><span class="p">:</span><span class="w">  </span><span class="nx">time</span><span class="p">.</span><span class="nx">Now</span><span class="p">(),</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nx">pb</span><span class="p">.</span><span class="nx">SendCommitDataRequest_CommitObjects</span><span class="p">{</span>
+<span class="w">            </span><span class="nx">CommitId</span><span class="p">:</span><span class="w">     </span><span class="nx">commit</span><span class="p">.</span><span class="nx">ID</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">CommitAuthor</span><span class="p">:</span><span class="w"> </span><span class="nx">commit</span><span class="p">.</span><span class="nx">Author</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">CommitTime</span><span class="p">:</span><span class="w">   </span><span class="nx">timestamppb</span><span class="p">.</span><span class="nx">New</span><span class="p">(</span><span class="nx">commit</span><span class="p">.</span><span class="nx">Time</span><span class="p">),</span>
+<span class="w">        </span><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="nx">pb</span><span class="p">.</span><span class="nx">SecretAlertRequest</span><span class="p">{</span>
+<span class="w">                </span><span class="nx">FileName</span><span class="p">:</span><span class="w">   </span><span class="nx">secret</span><span class="p">.</span><span class="nx">File</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">Repo</span><span class="p">:</span><span class="w">       </span><span class="nx">repo</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">LineNumber</span><span class="p">:</span><span class="w"> </span><span class="nb">int64</span><span class="p">(</span><span class="nx">secret</span><span class="p">.</span><span class="nx">Line</span><span class="p">),</span>
+<span class="w">                </span><span class="nx">CommitId</span><span class="p">:</span><span class="w">   </span><span class="nx">secret</span><span class="p">.</span><span class="nx">Commit</span><span class="p">.</span><span class="nx">ID</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">SecretType</span><span class="p">:</span><span class="w"> </span><span class="nx">secret</span><span class="p">.</span><span class="nx">Type</span><span class="p">,</span>
+<span class="w">                </span><span class="nx">IsVerified</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">            </span><span class="p">}</span>
+</code></pre></div>
+<p>You can look at the entire proto contract <a href="https://github.com/axilock/axilock-protos/">here</a>.</p>
 
 
 
@@ -564,10 +568,10 @@ codebase.</p>
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>

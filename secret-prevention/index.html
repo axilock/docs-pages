@@ -12,13 +12,15 @@
         <link rel="prev" href="..">
       
       
+        <link rel="next" href="how-it-works/">
+      
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>Axilock Secret Prevention - Axilock Docs</title>
+        <title>Getting Started - Axilock Docs</title>
       
     
     
@@ -106,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Axilock Secret Prevention
+              Getting Started
             
           </span>
         </div>
@@ -233,7 +235,7 @@
   
   
   <span class="md-ellipsis">
-    Welcome to Axilock Documentation
+    Home
     
   </span>
   
@@ -245,6 +247,68 @@
     
       
       
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Secret Prevention
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Secret Prevention
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
   
   
     
@@ -264,7 +328,7 @@
   
   
   <span class="md-ellipsis">
-    Axilock Secret Prevention
+    Getting Started
     
   </span>
   
@@ -277,7 +341,7 @@
   
   
   <span class="md-ellipsis">
-    Axilock Secret Prevention
+    Getting Started
     
   </span>
   
@@ -326,9 +390,72 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#uninstallation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uninstallation
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="how-it-works/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    How it works
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="telemetry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Telemetry
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -387,6 +514,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#uninstallation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uninstallation
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -418,14 +554,18 @@ the push will be rejected and you will be notified.</p>
 <p>In cases where you intentionally want to push a commit with a secret (for
 whatever reason) , you can use git's <code>--no-verify</code> flag to bypass the Axilock
 prevention check.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
 <p>It is is not recommended to bypass secret prevention as it can lead to
 compromised credentials and security breaches.</p>
 </div>
 <p>Example:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add secret&quot;</span><span class="w"> </span>--no-verify
 </code></pre></div>
+<h2 id="uninstallation">Uninstallation</h2>
+<p>Run the following command to uninstall Axilock Secret Prevention:
+<div class="highlight"><pre><span></span><code>~/.axi/axi<span class="w"> </span>uninstall
+</code></pre></div></p>
 
 
 

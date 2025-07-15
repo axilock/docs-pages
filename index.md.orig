@@ -1,0 +1,28 @@
+# Welcome to Axilock Documentation
+
+Axilock is a state of the art security solution designed to secure your tech
+stack from day one. It works as a companion that that keeps your codebase
+secure at every step of the way.
+
+## [Axilock Secret Prevention](secret-prevention.md)
+Prevents secrets from being committed to your codebase. Axilock takes a
+proactive approach to secret *prevention* and saves you time and effort, rather
+than a reactive approach to secret *detection* -- where harm is already done
+<<<<<<< Updated upstream
+and a proccess needs to be triggered for secret rotation. You will always
+stay compliant by never pushing a secret in the first place. Have a single place of looking all your
+metrics data of what types of secrets are commonly commited and how many times.
+
+### [Axilock Redactor](redactor.md)
+Redacts secrets from your codebase. If you have already commited a secret to
+=======
+and a process needs to be triggered for secret rotation. You will always
+stay compliant by never pushing a secret in the first place.
+
+## Axilock Redactor
+Redacts secrets from your codebase. If you have already committed a secret to
+>>>>>>> Stashed changes
+your codebase, Axilock Redactor will help you remove it. It will also help you
+remove the secret from your git history and from any other files in your
+codebase.
+
