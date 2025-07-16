@@ -949,8 +949,8 @@
 </ul>
 <h2 id="setup-instructions">Setup Instructions</h2>
 <h3 id="1-clone-the-repository">1. Clone the Repository</h3>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/axilock/axi-backend.git
-<span class="nb">cd</span><span class="w"> </span>axi-backend
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/axilock/axilock-backend.git
+<span class="nb">cd</span><span class="w"> </span>axilock-backend
 </code></pre></div>
 <h3 id="2-configure-environment">2. Configure Environment</h3>
 <p>Copy the example environment file and modify it according to your needs:</p>
@@ -963,20 +963,12 @@
 - Other service-specific configurations</p>
 <h3 id="21-configure-environment-variables">2.1 Configure Environment Variables</h3>
 <p>Fill the .env file with your specific configuration:</p>
-<div class="highlight"><pre><span></span><code>DB_DRIVER=postgres
-DB_SOURCE=postgresql://admin:&lt;Enter your database password&gt;@&lt;Enter your database address&gt;:5432/axilockdb?sslmode=disable
-HTTP_SERVER_ADDRESS=0.0.0.0:8080
+<div class="highlight"><pre><span></span><code>HTTP_SERVER_ADDRESS=0.0.0.0:8080
 GRPC_SERVER_ADDRESS=0.0.0.0:8090
-TOKEN_SYMETRIC_KEY=&lt;Enter your token symmetric key&gt;
-ACCESS_TIME_DURATION=&lt;Enter your access time duration for the frontend login&gt;
 RUNNING_ENV=&lt;Enter your running environment&gt;
-CLI_ACCESS_TIME_DURATION=&lt;Enter your cli access time duration&gt;
-REDIS_ADDR=&lt;Enter your redis address&gt;
-REDIS_PASS=&lt;Enter your redis password&gt;
 GITHUB_APP_ID=&lt;Enter your github app id&gt;
 GITHUB_CLIENT_SECRET=&lt;Enter your github client secret&gt;
 GITHUB_CLIENT_ID=&lt;Enter your github client id&gt;
-DISCORD_WEBHOOK=&lt;Enter your discord webhook&gt;
 </code></pre></div>
 <p>You will also need the private key file for the github app to be stored in the root directory of the project and name the file as <code>axilock.pem</code>.</p>
 <h3 id="3-start-services-with-docker-compose">3. Start Services with Docker Compose</h3>
