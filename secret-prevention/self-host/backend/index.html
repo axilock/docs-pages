@@ -533,9 +533,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#21-configure-environment-variables" class="md-nav__link">
+  <a href="#21-configure-github-app" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1 Configure Environment Variables
+      2.1 Configure Github App
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-configure-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Configure Environment Variables
     </span>
   </a>
   
@@ -794,9 +803,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#21-configure-environment-variables" class="md-nav__link">
+  <a href="#21-configure-github-app" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1 Configure Environment Variables
+      2.1 Configure Github App
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-configure-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Configure Environment Variables
     </span>
   </a>
   
@@ -961,7 +979,13 @@
 - Redis configuration
 - JWT secrets
 - Other service-specific configurations</p>
-<h3 id="21-configure-environment-variables">2.1 Configure Environment Variables</h3>
+<h3 id="21-configure-github-app">2.1 Configure Github App</h3>
+<p>You will need to create a github app to authenticate with the github api. You can do this by following the instructions <a href="https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/about-creating-github-apps">here</a>.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>You will also need the private key file for the github app to be stored in the root directory of the project and name the file as <code>axilock.pem</code> which is the default name used by the backend.  </p>
+</div>
+<h3 id="22-configure-environment-variables">2.2 Configure Environment Variables</h3>
 <p>Fill the .env file with your specific configuration:</p>
 <div class="highlight"><pre><span></span><code>HTTP_SERVER_ADDRESS=0.0.0.0:8080
 GRPC_SERVER_ADDRESS=0.0.0.0:8090
@@ -970,7 +994,6 @@ GITHUB_APP_ID=&lt;Enter your github app id&gt;
 GITHUB_CLIENT_SECRET=&lt;Enter your github client secret&gt;
 GITHUB_CLIENT_ID=&lt;Enter your github client id&gt;
 </code></pre></div>
-<p>You will also need the private key file for the github app to be stored in the root directory of the project and name the file as <code>axilock.pem</code>.</p>
 <h3 id="3-start-services-with-docker-compose">3. Start Services with Docker Compose</h3>
 <p>The application uses Docker Compose to manage services. Start all services with:</p>
 <div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>up<span class="w"> </span>-d
