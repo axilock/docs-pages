@@ -652,6 +652,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#other-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#license" class="md-nav__link">
     <span class="md-ellipsis">
       License
@@ -922,6 +931,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#other-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#license" class="md-nav__link">
     <span class="md-ellipsis">
       License
@@ -967,6 +985,7 @@
 </ul>
 <h2 id="setup-instructions">Setup Instructions</h2>
 <h3 id="1-clone-the-repository">1. Clone the Repository</h3>
+<p>Quick setup to download the backend repository and setup the environment.</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/axilock/axilock-backend.git
 <span class="nb">cd</span><span class="w"> </span>axilock-backend
 </code></pre></div>
@@ -980,7 +999,7 @@
 - JWT secrets
 - Other service-specific configurations</p>
 <h3 id="21-configure-github-app">2.1 Configure Github App</h3>
-<p>You will need to create a github app to authenticate with the github api. You can do this by following the instructions <a href="https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/about-creating-github-apps">here</a>.</p>
+<p>You will need to create a github app to authenticate with the github api. You can do this by following the instructions <a href="https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/about-creating-github-apps">here</a>. This github app will be used to authenticate with the github api to get the commit metadata which will give the coverage of how haw users are actively using the secrets protection.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>You will also need the private key file for the github app to be stored in the root directory of the project and name the file as <code>axilock.pem</code> which is the default name used by the backend.  </p>
@@ -1020,12 +1039,13 @@ go<span class="w"> </span>build<span class="w"> </span>-o<span class="w"> </span
 <div class="highlight"><pre><span></span><code>make<span class="w"> </span>lint
 </code></pre></div>
 <h3 id="api-documentation">API Documentation</h3>
-<p>The backend service provides RESTful APIs with endpoints documented in the codebase. The main entry points are:</p>
+<p>The backend service provides RESTful and gRPC APIs with endpoints documented in the codebase. The main entry points are:</p>
 <ul>
 <li>HTTP API: <code>http://localhost:8080</code></li>
 <li>gRPC Service: <code>http://localhost:8090</code></li>
 </ul>
 <h3 id="api-endpoints">API Endpoints</h3>
+<p>By default the endpoint run on HTTP, to configure your application to run on HTTPS you can configure a reverse proxy such as Nginx or Caddy to accept HTTPS requests and forward them to the backend service.</p>
 <h3 id="database-migrations">Database Migrations</h3>
 <p>Database migrations are managed in the <code>migrations/</code> directory. To apply migrations:</p>
 <div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>db<span class="w"> </span>psql<span class="w"> </span>-U<span class="w"> </span>admin<span class="w"> </span>-d<span class="w"> </span>axilockdb<span class="w"> </span>-f<span class="w"> </span>/path/to/migration.sql
@@ -1044,8 +1064,13 @@ go<span class="w"> </span>build<span class="w"> </span>-o<span class="w"> </span
 <li>Push to the branch (<code>git push origin feature/AmazingFeature</code>)</li>
 <li>Open a Pull Request</li>
 </ol>
+<h2 id="other-features">Other Features</h2>
+<ul>
+<li>We also monitor your GitHub commits for alien pushes to your GitHub repositories due to compromised or leaked GitHub credentials. Post installation of axilock on your dev machines you have complete confidence that every commit in your VCS repositories goes though an audit process. The first problem we are starting with is preventing secrets from ever reaching your VCS repositories. </li>
+<li>Our future road map includes solving for unified linting and sast rules across your teams and reducing the burden on CI pipelines to bring linting and scanning policies on device and save a ton on infra cost and provied unified standards for your teams to follow.</li>
+</ul>
 <h2 id="license">License</h2>
-<p>This project is licensed under the Apache2 License - see the LICENSE file for details.</p>
+<p>This project is licensed under the Apache 2.0 License - see the LICENSE file for details.</p>
 <h2 id="contact">Contact</h2>
 <p>For support or questions, please open an issue in the <a href="https://github.com/axilock/axilock-backend">GitHub repository</a>.</p>
 
