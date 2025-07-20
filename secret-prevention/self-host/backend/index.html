@@ -533,9 +533,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#21-configure-environment-variables" class="md-nav__link">
+  <a href="#21-configure-github-app" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1 Configure Environment Variables
+      2.1 Configure Github App
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-configure-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Configure Environment Variables
     </span>
   </a>
   
@@ -637,6 +646,15 @@
   <a href="#contributing" class="md-nav__link">
     <span class="md-ellipsis">
       Contributing
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#other-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Features
     </span>
   </a>
   
@@ -794,9 +812,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#21-configure-environment-variables" class="md-nav__link">
+  <a href="#21-configure-github-app" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1 Configure Environment Variables
+      2.1 Configure Github App
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-configure-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 Configure Environment Variables
     </span>
   </a>
   
@@ -904,6 +931,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#other-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#license" class="md-nav__link">
     <span class="md-ellipsis">
       License
@@ -949,8 +985,9 @@
 </ul>
 <h2 id="setup-instructions">Setup Instructions</h2>
 <h3 id="1-clone-the-repository">1. Clone the Repository</h3>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/axilock/axi-backend.git
-<span class="nb">cd</span><span class="w"> </span>axi-backend
+<p>Quick setup to download the backend repository and setup the environment.</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/axilock/axilock-backend.git
+<span class="nb">cd</span><span class="w"> </span>axilock-backend
 </code></pre></div>
 <h3 id="2-configure-environment">2. Configure Environment</h3>
 <p>Copy the example environment file and modify it according to your needs:</p>
@@ -961,24 +998,21 @@
 - Redis configuration
 - JWT secrets
 - Other service-specific configurations</p>
-<h3 id="21-configure-environment-variables">2.1 Configure Environment Variables</h3>
+<h3 id="21-configure-github-app">2.1 Configure Github App</h3>
+<p>You will need to create a github app to authenticate with the github api. You can do this by following the instructions <a href="https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/about-creating-github-apps">here</a>. This github app will be used to authenticate with the github api to get the commit metadata which will give the coverage of how haw users are actively using the secrets protection.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>You will also need the private key file for the github app to be stored in the root directory of the project and name the file as <code>axilock.pem</code> which is the default name used by the backend.  </p>
+</div>
+<h3 id="22-configure-environment-variables">2.2 Configure Environment Variables</h3>
 <p>Fill the .env file with your specific configuration:</p>
-<div class="highlight"><pre><span></span><code>DB_DRIVER=postgres
-DB_SOURCE=postgresql://admin:&lt;Enter your database password&gt;@&lt;Enter your database address&gt;:5432/axilockdb?sslmode=disable
-HTTP_SERVER_ADDRESS=0.0.0.0:8080
+<div class="highlight"><pre><span></span><code>HTTP_SERVER_ADDRESS=0.0.0.0:8080
 GRPC_SERVER_ADDRESS=0.0.0.0:8090
-TOKEN_SYMETRIC_KEY=&lt;Enter your token symmetric key&gt;
-ACCESS_TIME_DURATION=&lt;Enter your access time duration for the frontend login&gt;
 RUNNING_ENV=&lt;Enter your running environment&gt;
-CLI_ACCESS_TIME_DURATION=&lt;Enter your cli access time duration&gt;
-REDIS_ADDR=&lt;Enter your redis address&gt;
-REDIS_PASS=&lt;Enter your redis password&gt;
 GITHUB_APP_ID=&lt;Enter your github app id&gt;
 GITHUB_CLIENT_SECRET=&lt;Enter your github client secret&gt;
 GITHUB_CLIENT_ID=&lt;Enter your github client id&gt;
-DISCORD_WEBHOOK=&lt;Enter your discord webhook&gt;
 </code></pre></div>
-<p>You will also need the private key file for the github app to be stored in the root directory of the project and name the file as <code>axilock.pem</code>.</p>
 <h3 id="3-start-services-with-docker-compose">3. Start Services with Docker Compose</h3>
 <p>The application uses Docker Compose to manage services. Start all services with:</p>
 <div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>up<span class="w"> </span>-d
@@ -1005,12 +1039,13 @@ go<span class="w"> </span>build<span class="w"> </span>-o<span class="w"> </span
 <div class="highlight"><pre><span></span><code>make<span class="w"> </span>lint
 </code></pre></div>
 <h3 id="api-documentation">API Documentation</h3>
-<p>The backend service provides RESTful APIs with endpoints documented in the codebase. The main entry points are:</p>
+<p>The backend service provides RESTful and gRPC APIs with endpoints documented in the codebase. The main entry points are:</p>
 <ul>
 <li>HTTP API: <code>http://localhost:8080</code></li>
 <li>gRPC Service: <code>http://localhost:8090</code></li>
 </ul>
 <h3 id="api-endpoints">API Endpoints</h3>
+<p>By default the endpoint run on HTTP, to configure your application to run on HTTPS you can configure a reverse proxy such as Nginx or Caddy to accept HTTPS requests and forward them to the backend service.</p>
 <h3 id="database-migrations">Database Migrations</h3>
 <p>Database migrations are managed in the <code>migrations/</code> directory. To apply migrations:</p>
 <div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>db<span class="w"> </span>psql<span class="w"> </span>-U<span class="w"> </span>admin<span class="w"> </span>-d<span class="w"> </span>axilockdb<span class="w"> </span>-f<span class="w"> </span>/path/to/migration.sql
@@ -1029,8 +1064,13 @@ go<span class="w"> </span>build<span class="w"> </span>-o<span class="w"> </span
 <li>Push to the branch (<code>git push origin feature/AmazingFeature</code>)</li>
 <li>Open a Pull Request</li>
 </ol>
+<h2 id="other-features">Other Features</h2>
+<ul>
+<li>We also monitor your GitHub commits for alien pushes to your GitHub repositories due to compromised or leaked GitHub credentials. Post installation of axilock on your dev machines you have complete confidence that every commit in your VCS repositories goes though an audit process. The first problem we are starting with is preventing secrets from ever reaching your VCS repositories. </li>
+<li>Our future road map includes solving for unified linting and sast rules across your teams and reducing the burden on CI pipelines to bring linting and scanning policies on device and save a ton on infra cost and provied unified standards for your teams to follow.</li>
+</ul>
 <h2 id="license">License</h2>
-<p>This project is licensed under the Apache2 License - see the LICENSE file for details.</p>
+<p>This project is licensed under the Apache 2.0 License - see the LICENSE file for details.</p>
 <h2 id="contact">Contact</h2>
 <p>For support or questions, please open an issue in the <a href="https://github.com/axilock/axilock-backend">GitHub repository</a>.</p>
 
