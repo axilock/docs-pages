@@ -557,6 +557,66 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#building" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration Options
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compiling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compiling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -625,6 +685,66 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#building" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Building">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuration-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration File
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration Options
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compiling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compiling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -642,7 +762,7 @@
 
 
 <h1 id="axilock-cli">Axilock CLI <a href="https://github.com/axilock/axi"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M8 0c4.42 0 8 3.58 8 8a8.01 8.01 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27s-1.36.09-2 .27c-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8"/></svg></span></a></h1>
-<p>The Axilock CLI is is responsible for installing the axi binary in your machine.</p>
+<p>The Axilock CLI is is responsible for installing the axi pre-push in your machine.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>When you run <code>curl -sL https://get.axilock.ai | sh</code>, the bash script downloads
@@ -651,13 +771,126 @@ this CLI and triggers the installation process.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <ul>
 <li>Setup <a href="../backend/">Axilock backend</a></li>
+<li>Install Go 1.24 or higher</li>
+<li>cmake</li>
 </ul>
 <h2 id="assumptions">Assumptions</h2>
 <ul>
-<li>Backend http service is at: <code>backend:8080</code></li>
-<li>Backend grpc service is at: <code>backend:8090</code></li>
-<li>Frontend http service is at: <code>frontend:80</code></li>
+<li><a href="../backend">Backend</a> http service is at  : <code>backend:8080</code></li>
+<li><a href="../backend">Backend</a> grpc service is at  : <code>grpc:443</code></li>
+<li><a href="../frontend">Frontend</a> http service is at : <code>frontend:80</code></li>
 </ul>
+<h2 id="building">Building</h2>
+<p>Edit the <code>config.mk</code> file to match your configuration.</p>
+<h3 id="configuration-file">Configuration File</h3>
+<p>Based on the assumptions above, your <code>config.mk</code> could look like this:
+<div class="highlight"><pre><span></span><code><span class="nv">SENTRY_DSN</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="nv">GRPC_SERVER_NAME</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>grpc
+<span class="nv">GRPC_PORT</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="m">443</span>
+<span class="nv">FRONTEND_URL</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>http://frontend
+<span class="nv">GRPC_TLS</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">true</span>
+<span class="nv">DEBUG</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">false</span>
+<span class="nv">AUTO_UPDATE</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>notify
+<span class="nv">VERBOSE</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span>fals
+<span class="nv">OFFLINE</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">false</span>
+</code></pre></div></p>
+<h3 id="configuration-options">Configuration Options</h3>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+<th>Default Value</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SENTRY_DSN</code></td>
+<td>Sentry DSN URL for error tracking. You can leave this empty if you don't want to use sentry.</td>
+<td><code>https://...</code></td>
+<td>Valid Sentry DSN URL or <code>""</code></td>
+</tr>
+<tr>
+<td><code>GRPC_SERVER_NAME</code></td>
+<td>Hostname of the insights gRPC server. This is used to send coverage metrics on how many commits have been protected etc. No secret or code is ever sent.</td>
+<td><code>grpc.axilock.ai</code></td>
+<td>Any valid hostname</td>
+</tr>
+<tr>
+<td><code>GRPC_PORT</code></td>
+<td>Port number for the insights gRPC server</td>
+<td><code>443</code></td>
+<td>Valid port number</td>
+</tr>
+<tr>
+<td><code>GRPC_TLS</code></td>
+<td>Enable TLS for gRPC connections. You can disable this if you don't want to use TLS.</td>
+<td><code>true</code></td>
+<td><code>true</code>, <code>false</code></td>
+</tr>
+<tr>
+<td><code>FRONTEND_URL</code></td>
+<td>HTTP/HTTPS URL of the insights frontend. This is used for <code>axi auth</code> based login. You can leave this out if you're using MDM based installs via <code>axi install --api-key=...</code></td>
+<td><code>https://app.axilock.ai</code></td>
+<td>Valid <a href="../frontend">Frontend URL</a></td>
+</tr>
+<tr>
+<td><code>DEBUG</code></td>
+<td>Enable debug mode. When <code>true</code>: Enables: verbose, disables: autoupdate, sentry.</td>
+<td><code>false</code></td>
+<td><code>true</code>, <code>false</code></td>
+</tr>
+<tr>
+<td><code>AUTO_UPDATE</code></td>
+<td>Auto-update behavior.<br/><code>on</code>: Always update, ie replace axi binary at <code>~/.axi/bin/axi</code><br/><code>off</code>: Never update<br/><code>notify</code>: Notify when new version is available but do not update.</td>
+<td><code>notify</code></td>
+<td><code>on</code>, <code>off</code>, <code>notify</code></td>
+</tr>
+<tr>
+<td><code>VERBOSE</code></td>
+<td>Enable verbose logging</td>
+<td><code>false</code></td>
+<td><code>true</code>, <code>false</code></td>
+</tr>
+<tr>
+<td><code>OFFLINE</code></td>
+<td>Run in completely offline mode. In this mode, no network connectivity is required. <code>axi install</code> will <em>not</em> popup a login screen as well.</td>
+<td><code>false</code></td>
+<td><code>true</code>, <code>false</code></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Auto Update Options</p>
+<p>When <code>AUTO_UPDATE</code> is set to <code>on</code>, it replaces the binary installed at <code>~/.axi/bin/axi</code>.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Offline Mode</p>
+<p>When <code>OFFLINE</code> is set to <code>true</code>, the application will run in completely offline mode
+without any network connectivity. This means you'll not be capturing any metrics or
+coverage info.</p>
+</div>
+<h2 id="compiling">Compiling</h2>
+<p>You can compile the CLI by simply running make:</p>
+<div class="highlight"><pre><span></span><code>make
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can set compile time flags dynamically while running make. For eg:
+<div class="highlight"><pre><span></span><code>make<span class="w"> </span><span class="nv">DEBUG</span><span class="o">=</span><span class="nb">true</span>
+</code></pre></div></p>
+</div>
+<h2 id="installation">Installation</h2>
+<p>Finally, install axi client by:</p>
+<div class="highlight"><pre><span></span><code>bin/axi<span class="w"> </span>install
+</code></pre></div>
+<p>or if you're using MDM based installs,</p>
+<div class="highlight"><pre><span></span><code>bin/axi<span class="w"> </span>install<span class="w"> </span>--api-key<span class="o">=</span>...
+</code></pre></div>
+<h2 id="usage">Usage</h2>
+<p>That's it ! Carry on with your regular workflows. Axi will automatically block any git push that
+contains secrets.</p>
 
 
 
