@@ -14,7 +14,7 @@
         <link rel="prev" href="../../telemetry/">
       
       
-        <link rel="next" href="../frontend/">
+        <link rel="next" href="../cli/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -584,48 +584,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-build-and-run-locally" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Build and Run Locally
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-run-tests" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Run Tests
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#development" class="md-nav__link">
-    <span class="md-ellipsis">
-      Development
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Development">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#code-style-and-linting" class="md-nav__link">
-    <span class="md-ellipsis">
-      Code Style and Linting
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#api-documentation" class="md-nav__link">
     <span class="md-ellipsis">
       API Documentation
@@ -634,35 +592,8 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#api-endpoints" class="md-nav__link">
-    <span class="md-ellipsis">
-      API Endpoints
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#database-migrations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Database Migrations
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#security" class="md-nav__link">
-    <span class="md-ellipsis">
-      Security
-    </span>
-  </a>
   
 </li>
       
@@ -679,6 +610,15 @@
   <a href="#other-features" class="md-nav__link">
     <span class="md-ellipsis">
       Other Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enterprise-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enterprise support
     </span>
   </a>
   
@@ -706,29 +646,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../frontend/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Frontend
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -886,48 +803,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-build-and-run-locally" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Build and Run Locally
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-run-tests" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Run Tests
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#development" class="md-nav__link">
-    <span class="md-ellipsis">
-      Development
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Development">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#code-style-and-linting" class="md-nav__link">
-    <span class="md-ellipsis">
-      Code Style and Linting
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#api-documentation" class="md-nav__link">
     <span class="md-ellipsis">
       API Documentation
@@ -936,35 +811,8 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#api-endpoints" class="md-nav__link">
-    <span class="md-ellipsis">
-      API Endpoints
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#database-migrations" class="md-nav__link">
-    <span class="md-ellipsis">
-      Database Migrations
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#security" class="md-nav__link">
-    <span class="md-ellipsis">
-      Security
-    </span>
-  </a>
   
 </li>
       
@@ -981,6 +829,15 @@
   <a href="#other-features" class="md-nav__link">
     <span class="md-ellipsis">
       Other Features
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enterprise-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enterprise support
     </span>
   </a>
   
@@ -1026,8 +883,6 @@
 <ul>
 <li>Go 1.24.0 or higher</li>
 <li>Docker and Docker Compose</li>
-<li>PostgreSQL 16</li>
-<li>Redis 7.4.1</li>
 <li>Git</li>
 </ul>
 <h2 id="setup-instructions">Setup Instructions</h2>
@@ -1040,13 +895,18 @@
 <p>Copy the example environment file and modify it according to your needs:</p>
 <div class="highlight"><pre><span></span><code>cp<span class="w"> </span>env.example<span class="w"> </span>.env
 </code></pre></div>
-<p>Edit the <code>.env</code> file with your specific configuration:
-- Database connection details
-- Redis configuration
-- JWT secrets
-- Other service-specific configurations</p>
+<p>Edit the <code>.env</code> file with your specific configuration</p>
+<ul>
+<li><code>RUNNING_ENV</code>: Set to <code>dev</code> for development and <code>prod</code> for production</li>
+<li><code>GITHUB_APP_ID</code>: Your GitHub app ID</li>
+<li><code>GITHUB_CLIENT_SECRET</code>: Your GitHub app client secret</li>
+<li><code>GITHUB_CLIENT_ID</code>: Your GitHub app client ID</li>
+<li><code>HTTP_SERVER_ADDRESS</code>: The address to bind the HTTP server to which the frontend app communicates with</li>
+<li><code>GRPC_SERVER_ADDRESS</code>: The address to bind the gRPC server which the cli communicates with</li>
+</ul>
 <h3 id="21-configure-github-app">2.1 Configure Github App</h3>
-<p>You will need to create a github app to authenticate with the github api. You can do this by following the instructions <a href="https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/about-creating-github-apps">here</a>. This github app will be used to authenticate with the github api to get the commit metadata which will give the coverage of how haw users are actively using the secrets protection.</p>
+<p>You will need to create a github app to authenticate with the github api. You can do this by following the instructions <a href="https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/about-creating-github-apps">here</a>. 
+This github app will be used to authenticate with the github api to get the commit metadata which will give the coverage of how haw users are actively using the secrets protection. You need to get the values of <code>GITHUB_APP_ID</code>, <code>GITHUB_CLIENT_SECRET</code> and <code>GITHUB_CLIENT_ID</code> from the github app settings.</p>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>You will also need the private key file for the github app to be stored in the root directory of the project and name the file as <code>axilock.pem</code> which is the default name used by the backend.  </p>
@@ -1055,7 +915,7 @@
 <p>Fill the .env file with your specific configuration:</p>
 <div class="highlight"><pre><span></span><code>HTTP_SERVER_ADDRESS=0.0.0.0:8080
 GRPC_SERVER_ADDRESS=0.0.0.0:8090
-RUNNING_ENV=&lt;Enter your running environment&gt;
+RUNNING_ENV=&lt;dev/prod&gt;
 GITHUB_APP_ID=&lt;Enter your github app id&gt;
 GITHUB_CLIENT_SECRET=&lt;Enter your github client secret&gt;
 GITHUB_CLIENT_ID=&lt;Enter your github client id&gt;
@@ -1064,45 +924,16 @@ GITHUB_CLIENT_ID=&lt;Enter your github client id&gt;
 <p>The application uses Docker Compose to manage services. Start all services with:</p>
 <div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span>up<span class="w"> </span>-d
 </code></pre></div>
-<p>This will start:
-- PostgreSQL database (port 5432)
-- Redis cache (port 6379)
-- Backend service (ports 8080 and 8090)</p>
-<h3 id="4-build-and-run-locally">4. Build and Run Locally</h3>
-<p>Alternatively, you can build and run the application locally:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Build the project</span>
-go<span class="w"> </span>build<span class="w"> </span>-o<span class="w"> </span>axilock<span class="w"> </span>.
-
-<span class="c1"># Run the application</span>
-./axilock
-</code></pre></div>
-<h3 id="5-run-tests">5. Run Tests</h3>
-<p>To run the test suite:</p>
-<div class="highlight"><pre><span></span><code>make<span class="w"> </span><span class="nb">test</span>
-</code></pre></div>
-<h2 id="development">Development</h2>
-<h3 id="code-style-and-linting">Code Style and Linting</h3>
-<p>The project uses golangci-lint for code style enforcement. Run:</p>
-<div class="highlight"><pre><span></span><code>make<span class="w"> </span>lint
-</code></pre></div>
 <h3 id="api-documentation">API Documentation</h3>
 <p>The backend service provides RESTful and gRPC APIs with endpoints documented in the codebase. The main entry points are:</p>
 <ul>
 <li>HTTP API: <code>http://localhost:8080</code></li>
 <li>gRPC Service: <code>http://localhost:8090</code></li>
 </ul>
-<h3 id="api-endpoints">API Endpoints</h3>
-<p>By default the endpoint run on HTTP, to configure your application to run on HTTPS you can configure a reverse proxy such as Nginx or Caddy to accept HTTPS requests and forward them to the backend service.</p>
-<h3 id="database-migrations">Database Migrations</h3>
-<p>Database migrations are managed in the <code>migrations/</code> directory. To apply migrations:</p>
-<div class="highlight"><pre><span></span><code>docker-compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>db<span class="w"> </span>psql<span class="w"> </span>-U<span class="w"> </span>admin<span class="w"> </span>-d<span class="w"> </span>axilockdb<span class="w"> </span>-f<span class="w"> </span>/path/to/migration.sql
-</code></pre></div>
-<h2 id="security">Security</h2>
-<p>The application uses:</p>
-<ul>
-<li>PostgreSQL to store commit metadata and store users details to map them to github users</li>
-<li>Redis to store cli token for session data.</li>
-</ul>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>By default the endpoint run on HTTP and gRPC, to configure your application to run on HTTPS/ gRPCs you can configure a reverse proxy such as Nginx or Caddy to accept TLS connection and forward them to the HTTP and gRPC endpoints.</p>
+</div>
 <h2 id="contributing">Contributing</h2>
 <ol>
 <li>Fork the repository</li>
@@ -1116,6 +947,8 @@ go<span class="w"> </span>build<span class="w"> </span>-o<span class="w"> </span
 <li>We also monitor your GitHub commits for alien pushes to your GitHub repositories due to compromised or leaked GitHub credentials. Post installation of axilock on your dev machines you have complete confidence that every commit in your VCS repositories goes though an audit process. The first problem we are starting with is preventing secrets from ever reaching your VCS repositories. </li>
 <li>Our future road map includes solving for unified linting and sast rules across your teams and reducing the burden on CI pipelines to bring linting and scanning policies on device and save a ton on infra cost and provied unified standards for your teams to follow.</li>
 </ul>
+<h2 id="enterprise-support">Enterprise support</h2>
+<p>For enterprise support and for custom secrets support, schedule a call with us <a href="https://cal.com/axilock/support?overlayCalendar=true">Schedule a call</a>.</p>
 <h2 id="license">License</h2>
 <p>This project is licensed under the Apache 2.0 License - see the LICENSE file for details.</p>
 <h2 id="contact">Contact</h2>
